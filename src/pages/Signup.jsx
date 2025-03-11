@@ -15,7 +15,7 @@ export default function Signup(){
             </div>
             
             <div className="w-full flex justify-center pt-6">
-              <Button text="Signup" variant="primary" className="w-full" />
+              <Button text="Signup" variant="primary" />
             </div>
             
             <p className="text-sm text-gray-500 mt-4">
