@@ -1,10 +1,12 @@
+import Navbar from "./components/Navbar";
+import Signup from "./pages/Signup";
 
 function App() {
 
-
   return (
     <>
-        <h1>hii there</h1>
+      {/* <Navbar /> */}
+      <Signup />
     </>
   )
 }
