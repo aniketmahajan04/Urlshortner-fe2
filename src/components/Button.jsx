@@ -2,7 +2,7 @@
 const variantClasses = {
     "primary": "bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white w-full",
     "secondary": "bg-red-500 hover:bg-red-600 active:bg-red-700 text-white",
-    "outlined": "border border-gray-500 text-gray-700 hover:bg-gray-100",
+    "outlined": "border border-gray-500 text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 text-transparent",
     "disabled": "bg-gray-300 text-gray-500 cursor-not-allowed"
 }
 
