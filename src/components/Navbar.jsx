@@ -3,7 +3,7 @@ import Button from "./Button";
 
 export default function Navbar(){
     return(
-        <header className="w-screen
+        <header className="w-full
                             bg-blue-500
                             h-16
                             flex
@@ -13,7 +13,7 @@ export default function Navbar(){
             <div>
                 <h6 className="text-white text-lg font-bold ml-4">Nike</h6>
             </div>
-            <div className="ml-auto flex space-x-4">
+            <div className="ml-auto flex space-x-6">
                 <Button text="Sign-up" variant="primary"></Button>
                 <Button text="Login" variant="primary"></Button>
             </div>

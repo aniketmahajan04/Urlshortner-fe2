@@ -1,5 +1,6 @@
+import { motion } from "framer-motion";
 import Button from "../components/Button";
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
 
 export default function Home(){
     return(
@@ -10,32 +11,46 @@ export default function Home(){
                         justify-center 
                         items-center 
                         w-full h-[calc(100vh-4rem)]
-                        bg-white
-                        text-white 
+                        bg-gray-100
                         text-center 
                         px-4">
                
-                <h1 className="text-5xl 
+                <motion.h1 
+                        initial={{ opacity:0, y:20, scale:0.9 }}
+                        animate={{ opacity:1, y:0, scale: 1 }}
+                        transition={{ duration:0.8, ease: "easeOut" }}
+                        className="text-5xl 
                                 font-extrabold 
                                 bg-gradient-to-r 
                                 from-blue-600 
                                 to-purple-600 
                                 text-transparent 
                                 bg-clip-text
+                                drop-shadow-md
                                 ">
                                     Shorten Links, Expand Possibilities
-                </h1>
-                <h2 className="text-2xl 
+                </motion.h1>
+                <motion.h2
+                        initial={{ opacity:0, y:20, scale:0.9 }}
+                        animate={{ opacity:1, y:0, scale:1 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                         className="text-2xl 
                                mt-3 mb-3 
                                text-gray-700
                                ">
                                     Nike.url makes sharing effortless & fast.
-                </h2>
+                </motion.h2>
                 
-                <Button 
-                    text="Get Started" 
-                    variant="outlined" 
-                   />
+                <motion.div
+                    initial={{ opacity:0, y:10 }}
+                    animate={{ opacity:1, y:0 }}
+                    transition={{ duration:1, delay:0.6 }}
+                >
+                    <Button 
+                        text="Get Started" 
+                        variant="outlined" 
+                    />
+                </motion.div>
             </div>
         </div>
     );
