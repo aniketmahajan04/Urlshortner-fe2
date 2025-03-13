@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
+import { useRef } from "react";
+import Content from "../components/Content";
 
 export default function Home(){
+    const nextSectionRef = useRef(null);
+
+    const handleScroll = () => {
+        nextSectionRef.current?.scrollIntoView({ behavior: "smooth" })
+    }
+
     return(
         <div className="flex-col justify-center items-center min-h-screen w-full">
             <Navbar />
@@ -49,9 +57,17 @@ export default function Home(){
                     <Button 
                         text="Get Started" 
                         variant="outlined" 
+                        onClick={handleScroll}
                     />
                 </motion.div>
             </div>
+
+            
+                <div ref={nextSectionRef}
+                    className="w-full min-h-[100vh] bg-gray-100 flex flex-col items-center justify-center p-6"
+                >
+                    <Content />
+                </div>
         </div>
     );
 }

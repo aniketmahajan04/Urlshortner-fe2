@@ -10,7 +10,7 @@ const defaultStyle = "p-2 rounded-md flex justify-center items-center transition
 
 export default function Button({text, variant, onClick, disabled = false}){
     return (
-        <button className={`${defaultStyle} ${disabled ? variantClasses.disabled : variantClasses[variant]}`}>
+        <button onClick={onClick} className={`${defaultStyle} ${disabled ? variantClasses.disabled : variantClasses[variant]}`}>
             {text}
         </button>
     )
