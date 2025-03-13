@@ -9,9 +9,9 @@ export default function Signup(){
             <h2 className="text-2xl font-semibold text-gray-700 mb-2">Create an Account</h2>
             
             <div className="w-full space-y-4">
-              <Input type="email" placeholder="Email" />
-              <Input type="text" placeholder="Username" />
-              <Input type="password" placeholder="Password" />
+              <Input type="email" placeholder="Email" full="w-full"/>
+              <Input type="text" placeholder="Username" full="w-full"/>
+              <Input type="password" placeholder="Password" full="w-full"/>
             </div>
             
             <div className="w-full flex justify-center pt-6">

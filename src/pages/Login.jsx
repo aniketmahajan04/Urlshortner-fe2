@@ -9,8 +9,8 @@ export default function Login(){
             <h2 className="text-3xl font-semibold text-gray-800 mb-4">Login</h2>
             
             <div className="w-full space-y-4">
-              <Input type="email" placeholder="Email" />
-              <Input type="password" placeholder="Password" />
+              <Input type="email" placeholder="Email" full="w-full"/>
+              <Input type="password" placeholder="Password" full="w-full"/>
             </div>
             
             <div className="w-full flex justify-center items-center pt-6">
