@@ -3,6 +3,7 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import BACKEND_URL from "../config/config";
 
 
 export default function Signup(){
@@ -23,7 +24,7 @@ export default function Signup(){
       }
 
       try{
-        const response = await axios.post("http://localhost:3000/api/v1/user/signup", {
+        const response = await axios.post(`${BACKEND_URL}/user/signup`, {
           name: username,
           email: email,
           password: password
