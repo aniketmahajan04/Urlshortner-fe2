@@ -30,7 +30,7 @@ export default function Signup(){
           password: password
         })
 
-        navigate("/Login");
+        navigate("/login");
 
       }catch(error){
         console.error("Signup Error:", error.response?.data || error.message);
