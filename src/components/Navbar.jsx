@@ -14,7 +14,7 @@ export default function Navbar(){
                 <h6 className="text-white text-lg font-bold ml-4">Nike</h6>
             </div>
             <div className="ml-auto flex space-x-6">
-                <Button text="Sign-up" variant="primary"></Button>
+                <Button text="Signup" variant="primary"></Button>
                 <Button text="Login" variant="primary"></Button>
             </div>
         </header>
