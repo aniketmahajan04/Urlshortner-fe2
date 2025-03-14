@@ -64,7 +64,12 @@ export default function Home(){
 
             
                 <div ref={nextSectionRef}
-                    className="w-full min-h-[100vh] bg-gray-100 flex flex-col items-center justify-center"
+                    className="w-full 
+                    min-h-[100vh] 
+                    bg-gray-100 
+                    flex flex-col 
+                    items-center 
+                    justify-center"
                 >
                     <Content />
                 </div>

@@ -9,12 +9,12 @@ export default function Login(){
             <h2 className="text-3xl font-semibold text-gray-800 mb-4">Login</h2>
             
             <div className="w-full space-y-4">
-              <Input type="email" placeholder="Email" full="w-full"/>
-              <Input type="password" placeholder="Password" full="w-full"/>
+              <Input type="email" placeholder="Email" extraclasses="w-full"/>
+              <Input type="password" placeholder="Password" extraclasses="w-full"/>
             </div>
             
             <div className="w-full flex justify-center items-center pt-6">
-              <Button text="Login" variant="primary" />
+              <Button text="Login" variant="login" />
             </div>
           </div>
         </div>
