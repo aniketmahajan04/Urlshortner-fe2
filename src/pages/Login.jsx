@@ -20,6 +20,7 @@ export default function Login(){
       email: email,
       password: password
     });
+
     const jwt = response.data.token;
     localStorage.setItem("token", jwt);
     navigate("/");
