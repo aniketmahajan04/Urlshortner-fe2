@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import Button from "../components/Button";
 import Input from "../components/Input";
-import { useNavigate } from "react-router-dom";
+import { createCookieSessionStorage, useNavigate } from "react-router-dom";
 import axios from "axios";
 import BACKEND_URL from "../config/config";
 
@@ -13,17 +13,27 @@ export default function Login(){
   const navigate = useNavigate();
 
   async function login() {
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
+    try{
 
-    const response = await axios.post(`${BACKEND_URL}/user/signin`, {
-      email: email,
-      password: password
-    });
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
 
-    const jwt = response.data.token;
-    localStorage.setItem("token", jwt);
-    navigate("/");
+        const response = await axios.post(`${BACKEND_URL}/user/signin`, {
+          email: email,
+          password: password
+        }, {
+          withCredentials: true
+        });
+
+        if (!response.data.token) {
+          throw new Error("No token received from server");
+      }
+
+        navigate("/");
+      } catch(error){
+        console.error("Login failed:", error.response?.data || error.message);
+        alert(error.response?.data?.message || "Login failed, please try again.");
+      }
 
   }
 

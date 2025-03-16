@@ -24,6 +24,7 @@ export default function Content() {
             },{
                 withCredentials: true
                 });
+                
                 alert(response.data.msg);
                 setLinks([...links, {original: longLink, short: response.data.shortLink}])
         } catch(error){
