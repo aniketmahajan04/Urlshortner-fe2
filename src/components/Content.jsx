@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import Button from "./Button";
+import { useState, useRef } from "react"; 
+import Button from "./Button"; 
 import Input from "./Input";
 import axios from "axios";
 import BACKEND_URL from "../config/config";
@@ -85,7 +85,7 @@ export default function Content() {
                                 </tr>
                             </thead>
                             <tbody>
-                                {links.map((link, index) => {
+                                {links.map((link, index) => (
                                     <tr key={index} className="text-center border border-blue-500">
                                         <td className="py-2 px-4 border border-blue-500">{link.original}</td>
                                         <td className="py-2 px-4 border">
@@ -94,7 +94,7 @@ export default function Content() {
                                             </a>
                                         </td>
                                     </tr>
-                                })}
+                                ))}
                             </tbody>
                         </table>
                     ) : (
