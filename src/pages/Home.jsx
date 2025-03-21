@@ -72,6 +72,9 @@ export default function Home(){
                     justify-center"
                 >
                     <Content />
+                <div className="items-right">
+                    <Button text="all links" onClick={() => alert("clicked!")} variant="login"/>
+                </div>
                 </div>
         </div>
     );
