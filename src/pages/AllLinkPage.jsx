@@ -6,7 +6,7 @@ import BACKEND_URL from '../config/config';
 
 export default function AllLinkPage(){
 
-  const [links, setLinks] = useState([]);
+  const [link, setLinks] = useState([]);
 
   useEffect(() => {
 
@@ -17,18 +17,19 @@ export default function AllLinkPage(){
         withCredentials: true
         });
 
-        setLinks(response.data.map(link => ({
-            id: link._id,
-            short: link.shortUrl,
-            createdAt: link.createdAt
-        })));
-
+            setLinks(response.data.links.map(link => ({
+              id: link._id,
+              original: link.urlLink,
+              short: link.shortUrl,
+              createdAt: link.createdAt
+            })));
+        
       }catch(err) {
         console.error("Error fetching links: ", err);
       }
 
     }
-    fetchLinks();
+     fetchLinks();
   }, [])
 
  return (
@@ -42,21 +43,21 @@ export default function AllLinkPage(){
           <div>Created At</div>
         </div>
 
-        {links.map((links) => (
-          <div key={links.id} className="grid grid-cols-3 py-2 border-b relative hover:bg-gray-50 transition">
+        {link.map((link) => (
+          <div key={link.id} className="grid grid-cols-3 py-2 border-b relative hover:bg-gray-50 transition">
             <div className="relative group">
-              <a href={links.shortUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline"
-                {...links.short}
-              />
+              <a href={link.original} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">
+                {`http://nike.url/${link.short}`}
+              </a>
               {/* Delete Button - Shown on Hover */}
               <button
                 className="absolute top-0 right-0 hidden group-hover:block bg-red-500 text-white p-1 rounded-full shadow-md hover:bg-red-600 transition"
-                onClick={() => deleteLink(links.id)}
+                onClick={() => deleteLink(link.id)}
               >
                 <Trash2 size={16} />
               </button>
             </div>
-            <div>{links.createdAt}</div>
+            <div>{link.createdAt}</div>
           </div>
         ))}
 

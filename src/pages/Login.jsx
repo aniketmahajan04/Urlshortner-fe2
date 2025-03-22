@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import Button from "../components/Button";
 import Input from "../components/Input";
-import { createCookieSessionStorage, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import BACKEND_URL from "../config/config";
 
@@ -22,7 +22,7 @@ export default function Login(){
           email: email,
           password: password
         }, {
-          withCredentials: true
+          withCredentials: true 
         });
 
         if (!response.data.token) {
