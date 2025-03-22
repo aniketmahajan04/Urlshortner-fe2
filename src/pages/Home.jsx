@@ -3,9 +3,11 @@ import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 import { useRef } from "react";
 import Content from "../components/Content";
+import { useNavigate } from "react-router-dom";
 
 export default function Home(){
     const nextSectionRef = useRef(null);
+    const navigate = useNavigate();
 
     const handleScroll = () => {
         nextSectionRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -26,8 +28,9 @@ export default function Home(){
                 <motion.h1 
                         initial={{ opacity:0, y:20, scale:0.9 }}
                         animate={{ opacity:1, y:0, scale: 1 }}
-                        transition={{ duration:0.8, ease: "easeOut" }}
-                        className="text-5xl 
+                        transition={{ duration:0.8, ease: "easeOut" }} 
+                                
+                                className="text-5xl 
                                 font-extrabold 
                                 bg-gradient-to-r 
                                 from-blue-600 
@@ -73,7 +76,7 @@ export default function Home(){
                 >
                     <Content />
                 <div className="items-right">
-                    <Button text="all links" onClick={() => alert("clicked!")} variant="login"/>
+                    <Button text="all links" onClick={() => navigate("/alllinks")} variant="login"/>
                 </div>
                 </div>
         </div>
